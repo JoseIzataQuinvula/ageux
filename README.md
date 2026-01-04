@@ -1,70 +1,64 @@
-# Ducklinux Terminal v1.0.0
+# AgeUX - Calculadora de Idade em Terminal
 
-Ducklinux Terminal v1.0.0
-© 2025 José Izata Quinvula – Todos os direitos reservados
-Criado com orgulho em Angola
+Este repositório contém o código-fonte do AgeUX, um utilitário desenvolvido para simular uma interface de linha de comando Linux (Bash) dedicada ao cálculo de idade. O projeto foi estruturado com foco em imersão, lógica assíncrona e design responsivo.
 
-A primeira e mais angolana calculadora de idade com visual inspirado num terminal Linux puro.
+## Visão Geral
 
-Abre no navegador e transmite a sensação de estar realmente num terminal — com formato de datas, horas e expressões adaptadas ao nosso estilo.
-
-## Funcionalidades
-
-* Calcula idade automaticamente ao introduzir uma data
-* Aceita vários separadores: `-`, `/`, `.`, `,`, `;`, espaço
-* Aceita data + hora → `12-12-2004 14:30`
-* Aceita tempo relativo → `12h`, `90m`, `2h30m`
-* Reconhece vários comandos: `calcular`, `calculadora`, `idade`, `calc`, `quanto tempo` e até apenas a data
-* `ajuda` exibe todos os comandos
-* `limpar` limpa o ecrã
-* Tab mostra os últimos 5 comandos
-* Cabeçalho retrátil ao rolar (como um terminal real)
-* Totalmente responsivo
-
-## Exemplos que funcionam
-
-```txt
-12-12-2004
-25/03/1995 14:30
-15.08.1990 2h30m
-01,01,2023 90m
-2004 12:20
-idade 08-09-1996 00:00
-quanto tempo 1/1/2025
-```
-
-## Capturas de ecrã
-
-![Ducklinux Terminal](recursos/img/screenshot1.jpg)
-![Ducklinux no telemóvel](recursos/img/screenshot-mobile.jpg)
-
-## Autor
-
-José Izata Quinvula
-Programador angolano
-Luanda, Angola
-2025
-
-> "Feito com o coração em Angola, para o mundo inteiro ver que nós também sabemos fazer coisas brutais."
-
-## Direitos
-
-© 2025 José Izata Quinvula
-Todos os direitos reservados.
-
-Podes usar, mostrar e partilhar — mas o Ducklinux permanece **propriedade intelectual de José Izata Quinvula, Angola**.
-
-## Contato
-
-* WhatsApp: *(adiciona o teu número se quiseres)*
-* Instagram: @joseizataquinvula
-* GitHub: github.com/josequinvula
+O AgeUX funciona como um simulador de terminal técnico. A arquitetura foi planejada para proporcionar uma experiência de usuário (UX) diferenciada, utilizando comandos manuais e simulações de processos do sistema (como carregamento de repositórios) em vez de formulários convencionais.
 
 ---
 
-**Ducklinux não é só código.**
-**É orgulho angolano transformado em terminal.**
+## Arquitetura de Pastas
 
-**José Izata Quinvula — o futuro da programação em Angola já tem nome.**
+A organização do diretório segue o padrão de separação de responsabilidades:
 
-Ducklinux para sempre!
+* **Raiz:** Arquivos de configuração global, SEO e entrada principal (`index.html`).
+* **assets/css:** Estilização modular com suporte a temas retro e responsividade.
+* **assets/js:** Motor lógico do sistema, interpretador de comandos e funções de tempo.
+* **assets/imgs:** Armazenamento de ativos estáticos e recursos visuais (previews).
+
+---
+
+## Especificações Técnicas
+
+O desenvolvimento foi realizado utilizando tecnologias nativas, priorizando o desempenho e a compatibilidade:
+
+* **Estrutura:** HTML5 Semântico com foco em acessibilidade.
+* **Estilização:** CSS3 puro com suporte a *Ghost Suggestions* e *Media Queries*.
+* **Comportamento:** JavaScript ES6+ com processamento de comandos assíncronos.
+* **Indexação:** Configurações de metadados e SEO para otimização de busca.
+
+---
+
+## Demonstração da Interface
+
+### Interface Desktop
+
+![Visualização Desktop](./assets/imgs/preview-desktop.png)
+
+### Interface Mobile
+
+![Visualização Mobile](./assets/imgs/preview-mobile.png)
+
+---
+
+## Procedimentos de Instalação
+
+Para replicar o ambiente de desenvolvimento localmente, siga os passos abaixo:
+
+1. Clone o repositório:
+
+```bash
+git clone [https://github.com/JoseIzataQuinvula/ageux.git](https://github.com/JoseIzataQuinvula/ageux.git)
+
+cd ageux
+
+2. Execução: O projeto não requer compiladores. Basta abrir o arquivo index.html em um navegador moderno ou utilizar o Live Server.
+
+---
+
+### Notas Finais para o Deploy:
+1. **Imagens:** Certifica-te de que os nomes dos arquivos na pasta `assets/imgs/` são exatamente `preview-desktop.png` e `preview-mobile.png`.
+2. **Link do Repo:** No comando `git clone`, verifica se o nome do repositório é exatamente `ageux` no teu GitHub.
+
+Precisas que eu te ajude com a descrição de algum outro arquivo ou o projeto está finalizado?
