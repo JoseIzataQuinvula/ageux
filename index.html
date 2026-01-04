@@ -1,18 +1,58 @@
 <!DOCTYPE html>
-<html lang="pt-AO">
+<html lang="pt-ao">
 <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5M65Y4108Y"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-5M65Y4108Y');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="recursos/img/favicon-pato.png">   
-    <title>Ducklinux Terminal – Calculadora de Idade</title>
-    <link rel="stylesheet" href="recursos/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" href="favicon-pato.ico" type="image/x-icon">
+    <title>AgeUX | Linux Style Age Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/index.css">
 </head>
 <body>
-<p>Atualizações em breve</p>
-<div id="terminal">
-    <div id="conteudo"></div>
-</div>
+    <div class="terminal-window">
+        <div class="terminal-header">
+            <div class="buttons">
+                <span class="close"></span>
+                <span class="minimize"></span>
+                <span class="maximize"></span>
+            </div>
+            <div class="title">user@ageux: ~/scripts/ageux.sh</div>
+        </div>
+        
+        <div class="terminal-body" id="terminal">
+            <pre class="ascii-art">
+     _                 _   _ __  __ 
+    / \   __ _  ___   | | | |\ \/ / 
+   / _ \ / _` |/ _ \  | | | | \  /  
+  / ___ \ (_| |  __/  | |_| | /  \  
+ /_/   \_\__, |\___|   \___/ /_/\_\ 
+         |___/                      
+            </pre>
+            <p class="output">AgeUX Utility [Version 1.1.0-stable]</p>
+            <p class="output">Digite 'help' para ver os comandos ou use o comando abaixo:</p>
+            <p class="output" style="color: #888;">./ageux.sh --calc --date=AAAA-MM-DD</p>
+            <br>
+            
+            <div id="result-area"></div>
 
-<script src="recursos/script.js"></script>
+            <div class="input-line">
+    <span class="prompt">user@ageux:~$</span>
+    <div class="input-wrapper">
+        <span id="ghost-suggestion"></span>
+        <input type="text" id="terminal-input" autofocus spellcheck="false" autocomplete="off">
+    </div>
+</div>
+        </div>
+    </div>
+    <script src="assets/js/index.js"></script>
 </body>
 </html>
