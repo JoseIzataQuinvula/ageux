@@ -1,0 +1,204 @@
+/* --- RESET E BASE --- */
+body {
+    background-color: #121212;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    overflow: hidden; /* Evita scroll na página principal */
+}
+
+/* --- JANELA DO TERMINAL --- */
+.terminal-window {
+    width: 650px;
+    background: #000;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+    border: 1px solid #333;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- CABEÇALHO (TITLE BAR) --- */
+.terminal-header {
+    background: #2b2b2b;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #111;
+    position: relative;
+}
+
+.buttons {
+    display: flex;
+    z-index: 3;
+}
+
+.buttons span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.close { background: #ff5f56; }
+.minimize { background: #ffbd2e; }
+.maximize { background: #27c93f; }
+
+.title {
+    color: #999;
+    font-size: 13px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* --- CORPO DO TERMINAL --- */
+.terminal-body {
+    padding: 20px;
+    color: #00ff00;
+    height: 450px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Barra de Rolagem Estilo Linux */
+.terminal-body::-webkit-scrollbar {
+    width: 6px;
+}
+.terminal-body::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 10px;
+}
+
+.ascii-art {
+    font-size: 11px;
+    line-height: 1.2;
+    margin-bottom: 25px;
+    color: #00ff00;
+    white-space: pre;
+}
+
+/* --- LINHA DE ENTRADA (PROMPT) --- */
+.input-line {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 5px;
+    padding-bottom: 15px;
+}
+
+.prompt {
+    color: #50fa7b;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* Wrapper para sobrepor Input e Sugestão */
+.input-wrapper {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+#terminal-input {
+    background: transparent;
+    border: none;
+    color: #00ff00;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    caret-color: #00ff00;
+}
+
+#ghost-suggestion {
+    position: absolute;
+    left: 0;
+    color: #444; /* Cinza escuro para o efeito fantasma */
+    font-family: inherit;
+    font-size: 14px;
+    pointer-events: none;
+    z-index: 1;
+    white-space: pre;
+}
+
+/* --- OUTPUTS E RESULTADOS --- */
+.output {
+    margin: 2px 0;
+    line-height: 1.4;
+}
+
+.result-box {
+    margin: 15px 0;
+    padding-left: 10px;
+    border-left: 2px solid #333;
+    animation: fadeIn 0.5s ease;
+}
+
+.error {
+    color: #ff5555;
+    margin: 5px 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(-5px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* --- RESPONSIVIDADE (MOBILE E TELAS PEQUENAS) --- */
+@media (max-width: 700px) {
+    .terminal-window {
+        width: 95%;
+        height: 90vh;
+        margin: 10px;
+    }
+
+    .terminal-body {
+        height: 100%;
+        padding: 15px;
+        font-size: 12px;
+    }
+
+    .ascii-art {
+        font-size: 7px;
+        line-height: 8px;
+    }
+
+    #terminal-input, #ghost-suggestion {
+        font-size: 12px;
+    }
+}
+
+/* --- AJUSTE PARA MODO PAISAGEM (DEITADO) --- */
+@media (max-height: 500px) and (orientation: landscape) {
+    .terminal-window {
+        width: 95%;
+        height: 95vh;
+    }
+    
+    .terminal-body {
+        padding: 10px;
+    }
+
+    .ascii-art {
+        display: none; /* Esconde o logo para focar no input em telas baixas */
+    }
+
+    .input-line {
+        padding-bottom: 50px; /* Espaço extra para o teclado mobile */
+    }
+}
