@@ -54,11 +54,3 @@ git clone [https://github.com/JoseIzataQuinvula/ageux.git](https://github.com/Jo
 cd ageux
 
 2. Execução: O projeto não requer compiladores. Basta abrir o arquivo index.html em um navegador moderno ou utilizar o Live Server.
-
----
-
-### Notas Finais para o Deploy:
-1. **Imagens:** Certifica-te de que os nomes dos arquivos na pasta `assets/imgs/` são exatamente `preview-desktop.png` e `preview-mobile.png`.
-2. **Link do Repo:** No comando `git clone`, verifica se o nome do repositório é exatamente `ageux` no teu GitHub.
-
-Precisas que eu te ajude com a descrição de algum outro arquivo ou o projeto está finalizado?
