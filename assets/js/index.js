@@ -4,7 +4,7 @@ const resultArea = document.getElementById('result-area');
 const terminalBody = document.getElementById('terminal');
 
 // Lista de comandos para o sistema de sugestão e autocomplete
-const COMANDOS = ["./ageux.sh --calc --date=", "help", "clear", "neofetch", "about", "social", "redes"];
+const COMANDOS = ["./ageux.sh --calc --date=", "help", "clear", "neofetch", "about"];
 
 // Monitora a digitação para sugestão dinâmica (Ghost Suggestion)
 input.addEventListener('input', () => {
@@ -58,8 +58,14 @@ async function processarComando(cmd) {
             <p class="output">  ./ageux.sh --calc --date=AAAA-MM-DD</p>
             <p class="output">  neofetch - Informações do sistema e desenvolvedor</p>
             <p class="output">  about    - Sobre o projeto</p>
-            <p class="output">  social   - Redes sociais e contatos do desenvolvedor</p>
             <p class="output">  clear    - Limpar terminal</p>
+            <p class="output" style="color: #50fa7b; margin-top: 8px;">Redes Sociais:</p>
+            <p class="output">  <b style="color: #ffffff;">GitHub:</b>    <a href="https://github.com/JoseIzataQuinvula" target="_blank" style="color: #8be9fd;">github.com/JoseIzataQuinvula</a></p>
+            <p class="output">  <b style="color: #0077b5;">LinkedIn:</b>  <a href="https://www.linkedin.com/in/jos%C3%A9-izata-quinvula-9287a3389/" target="_blank" style="color: #8be9fd;">jose-izata-quinvula</a></p>
+            <p class="output">  <b style="color: #ff5555;">YouTube:</b>   <a href="https://www.youtube.com/channel/UClVHPfSwp2m7iyPgllg0oEQ" target="_blank" style="color: #8be9fd;">Canal no YouTube</a></p>
+            <p class="output">  <b style="color: #1877f2;">Facebook:</b>  <a href="https://www.facebook.com/jose.izata.quinvula/" target="_blank" style="color: #8be9fd;">jose.izata.quinvula</a></p>
+            <p class="output">  <b style="color: #ff79c6;">Instagram:</b> <a href="https://www.instagram.com/joseizataquinvula/" target="_blank" style="color: #8be9fd;">joseizataquinvula</a></p>
+            <p class="output">  <b style="color: #ffb86c;">E-mail:</b>    <a href="mailto:joseizataquinvula885@gmail.com" style="color: #8be9fd;">joseizataquinvula885@gmail.com</a></p>
         `);
     } 
 
@@ -81,7 +87,7 @@ async function processarComando(cmd) {
                     <p><b style="color: #50fa7b;">Dev:</b> José Izata Quinvula</p>
                     <p><b style="color: #50fa7b;">Shell:</b> bash 5.0.17</p>
                     <p><b style="color: #50fa7b;">Loc:</b> Luanda, Angola 🇦🇴</p>
-                    <p><b style="color: #50fa7b;">Social:</b> Digite 'social' ou use o dock abaixo</p>
+                    <p><b style="color: #50fa7b;">Social:</b> Digite 'help' para ver as redes</p>
                 </div>
             </div>
         `);
@@ -95,18 +101,7 @@ async function processarComando(cmd) {
         `);
     }
 
-    // 4.1 Comando SOCIAL / REDES
-    else if (['social', 'redes', 'contact', 'contato'].includes(cleanCmd)) {
-        resultArea.insertAdjacentHTML('beforeend', `
-            <p class="output" style="color: #50fa7b;">Redes Sociais & Contatos de José Izata Quinvula:</p>
-            <p class="output">  <i class="fa-brands fa-linkedin" style="color: #0077b5; width: 20px;"></i> <b style="color: #0077b5;">LinkedIn:</b>  <a href="https://www.linkedin.com/in/jos%C3%A9-izata-quinvula-9287a3389/" target="_blank" style="color: #8be9fd; text-decoration: underline; font-family: monospace;">jose-izata-quinvula-9287a3389</a></p>
-            <p class="output">  <i class="fa-brands fa-github" style="color: #ffffff; width: 20px;"></i> <b style="color: #ffffff;">GitHub:</b>    <a href="https://github.com/JoseIzataQuinvula" target="_blank" style="color: #8be9fd; text-decoration: underline; font-family: monospace;">JoseIzataQuinvula</a></p>
-            <p class="output">  <i class="fa-brands fa-youtube" style="color: #ff5555; width: 20px;"></i> <b style="color: #ff5555;">YouTube:</b>   <a href="https://www.youtube.com/channel/UClVHPfSwp2m7iyPgllg0oEQ" target="_blank" style="color: #8be9fd; text-decoration: underline; font-family: monospace;">Visitar Canal</a></p>
-            <p class="output">  <i class="fa-brands fa-facebook" style="color: #1877f2; width: 20px;"></i> <b style="color: #1877f2;">Facebook:</b>  <a href="https://www.facebook.com/jose.izata.quinvula/" target="_blank" style="color: #8be9fd; text-decoration: underline; font-family: monospace;">jose.izata.quinvula</a></p>
-            <p class="output">  <i class="fa-brands fa-instagram" style="color: #ff79c6; width: 20px;"></i> <b style="color: #ff79c6;">Instagram:</b> <a href="https://www.instagram.com/joseizataquinvula/" target="_blank" style="color: #8be9fd; text-decoration: underline; font-family: monospace;">joseizataquinvula</a></p>
-            <p class="output">  <i class="fa-solid fa-envelope" style="color: #ffb86c; width: 20px;"></i> <b style="color: #ffb86c;">E-mail:</b>    <a href="mailto:joseizataquinvula885@gmail.com" style="color: #8be9fd; text-decoration: underline; font-family: monospace;">joseizataquinvula885@gmail.com</a></p>
-        `);
-    }
+
 
     // 5. Comando de Cálculo com Simulação de Instalação (Lento para segurança)
     else if (cmd.includes('--date=')) {
