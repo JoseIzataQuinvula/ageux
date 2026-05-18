@@ -1,0 +1,15 @@
+DuckHub/
+├── README.md                                   
+├── index.html
+├── favicon-pato.ico
+├── LICENSE                        
+└── assets/                                     
+    ├── css/                    
+    │   └── index.css
+    |
+    ├── imgs/
+    |   └── ---
+    |                       
+    └── js/                       
+        └── index.js   
+                               
